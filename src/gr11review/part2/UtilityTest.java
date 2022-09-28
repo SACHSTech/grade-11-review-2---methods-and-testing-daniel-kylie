@@ -1,5 +1,7 @@
 package gr11review.part2;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +11,12 @@ public class UtilityTest{
     // method 3 testing
     @Test
     public void methodTest1(){
-        ;
+        assertTrue("AAxyzBB", true);
+    }
+
+    @Test
+    public void methodTest2(){
+        assertFalse("AAxyzB", false);
     }
   
 }
