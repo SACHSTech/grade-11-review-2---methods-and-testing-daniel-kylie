@@ -66,28 +66,19 @@ public class Utility {
     
     public static String alphaWord (String filenametxt) throws IOException{
         // read the file
-        BufferedReader file = new BufferedReader (FileReader(filenametxt));
 
         // define variables
-        String strWord = "";
-        String strOutputWord = "z";
+        
 
         // go through all the words in the file 
-        while (strWord != null){
-            strWord = file.readLine();
-
-            if ((strWord != null) && (strOutputWord.compareToIgnoreCase(strWord) > 0 )){
-                strOutputWord = strWord;
-            }
+        
             
         }
         // close the file 
-        file.close();
 
         // return the word that would be first in alphabetical order
-        return strOutputWord;
 
-    }
+    
 
     /*
      * Arrays 3 - One Dimensional 
@@ -122,10 +113,15 @@ public class Utility {
         }
         // return the new array with all the zeros in the front 
         return newArray;
-
     }
 
-   
+    // Arrays - 1D, 2 Loops
+    public static boolean canBalance(int[] nums){
+        // define variables
+        boolean isBalanced;
+        
+
+   }
 
     
 
