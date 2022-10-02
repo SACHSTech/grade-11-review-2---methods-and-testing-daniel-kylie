@@ -1,9 +1,8 @@
 package gr11review.part2;
 
+import java.io.File;
+import java.util.Scanner;
 import java.io.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Arrays;
 
 /**
  * Grade 11 review part 2 
@@ -12,7 +11,7 @@ import java.util.Arrays;
  */
 
 public class Utility {
- 
+
     /**
      * Determines if the string is xy-balanced, meaning there is a 'y' character behind all the 'x' characters
      * 
@@ -38,7 +37,36 @@ public class Utility {
         // return whether or not the string is xy-balanced
         return isBalanced;
     }
-    
 
+     
+    
+    /**
+     * Given a file with one word on each line, return the word with the most characters
+     * 
+     * @param filenametxt The name of the file
+     * @return strLongestWord, the word with the most characters in the text file
+     * 
+     */
+    public static String longestWord(String filenametxt) throws IOException {
+        // Initialize characters in the longest word to be 0
+        int intCharacters = 0;
+        String strCompare = "";
+        String strLongestString = "";
+        Scanner myScanner = new Scanner(new File(filenametxt));
+        
+        // As long as the txt file has another line, set it equal to strCompare
+        while (myScanner.hasNextLine()) {
+            strCompare = myScanner.nextLine();
+
+            // If there are more characters in strCompare, it is the new longest word
+            if (strCompare.length() > intCharacters) {
+                strLongestString = strCompare;
+                intCharacters = strLongestString.length();
+            }
+        }
+        // Close the scanner and return the longest word
+        myScanner.close();
+        return strLongestString;
+    }
     
 }
