@@ -17,6 +17,9 @@ public class Utility {
         int myarray[] = {1, 0, 0, 1};
         System.out.println(Arrays.toString(zeroFront(myarray)));
 
+        // Array 5 - Check output
+        
+
 
     }
 
@@ -64,7 +67,7 @@ public class Utility {
      * @author K. Sinclair
      */
     
-    public static String alphaWord (String filenametxt) throws IOException{
+    //public static String alphaWord (String filenametxt) throws IOException{
         // read the file
 
         // define variables
@@ -73,7 +76,7 @@ public class Utility {
         // go through all the words in the file 
         
             
-        }
+        //}
         // close the file 
 
         // return the word that would be first in alphabetical order
@@ -141,12 +144,11 @@ public class Utility {
           if (intSumLeft == intSumRight) {
             returnValue = true;
           }
-          // if sums are not equal, return false
-          else{
-            returnValue = false;
-          }
+        
         }
-    
+        // if the sums aren't equal return value is false
+        returnValue = false;
+
         // output the boolean return value
         return returnValue; 
     
