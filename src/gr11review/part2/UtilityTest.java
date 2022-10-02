@@ -44,5 +44,27 @@ public class UtilityTest{
             System.out.println("File does not exist.");     
         }
     } 
+
+    // Array 1 - One Dimensional 
+    @Test 
+    public void withoutTenTest1(){
+        int[] intArray = {1, 10, 10, 2};
+        int[] intArrayExpected = {1, 2, 0, 0};
+        assertArrayEquals(intArrayExpected, Utility.withoutTen(intArray));
+    }
+
+    @Test
+    public void withoutTenTest2(){
+        int[] intArray1 = {1, 99, 2, 2, 3, 10, 10, 10};
+        int[] intArrayExpected1 = {1, 99, 2, 2, 3, 0, 0, 0};
+        assertArrayEquals(intArrayExpected1, Utility.withoutTen(intArray1));
+    }
+
+    @Test
+    public void withoutTenTest3(){
+        int[] intArray2 = {10, 10, 2, 2};
+        int[] intArrayExpected2 = {2, 2, 0, 0};
+        assertArrayEquals(intArrayExpected2, Utility.withoutTen(intArray2));
+    }
   
 }

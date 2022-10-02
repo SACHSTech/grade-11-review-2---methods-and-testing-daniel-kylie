@@ -68,5 +68,42 @@ public class Utility {
         myScanner.close();
         return strLongestString;
     }
+
+    
+
+    /**
+     * Given an array of integers, remove all 10s and replace them with 0s at the end of the array
+     *
+     * @param nums An array of integers numbers
+     * @return int[] intCopy, the inputted array after it has been changed
+     *
+     */
+    public static int[] withoutTen(int[] nums) {
+        // Make a copy of the array and initialize number of zeros
+        int[] intCopy = new int[nums.length];
+        int intZeros = 0;
+       
+        // Check all the array numbers in nums to see if they are 10
+        for (int intIndex = 0; intIndex < nums.length; intIndex++){
+            if (nums[intIndex] == 10){
+                intZeros++;
+            }
+           
+            // Copy the index over if 10 is not stored in it
+            else if (nums[intIndex] != 10){
+                intCopy[intIndex - intZeros] = nums[intIndex];
+            }
+        }
+       
+        // Add the same number of 0s at the end of the copy, as there are 10s in the original
+        if (intZeros != 0){
+            for (int intCount = 0; intCount < intZeros; intCount++){
+                intCopy[(nums.length - 1) - intCount] = 0;
+            }
+        }
+        return intCopy;
+    }
+ 
+
     
 }
