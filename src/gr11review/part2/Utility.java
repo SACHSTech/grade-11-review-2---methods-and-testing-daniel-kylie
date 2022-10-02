@@ -116,13 +116,41 @@ public class Utility {
     }
 
     // Arrays - 1D, 2 Loops
-    public static boolean canBalance(int[] nums){
-        // define variables
-        boolean isBalanced;
-        
-
-   }
-
+    public static boolean canBalance (int[] nums){ 
     
+        // defining the variables
+        int intTotalSum = 0; 
+        int intSumLeft = 0;
+        int intSumRight; 
+        int intArrLength = nums.length; 
+        boolean returnValue = false;
+    
+        // finds the sum of the entire array of integers 
+        for (int i = 0; i < intArrLength; i++) { 
+            intTotalSum += nums[i]; 
+        }
+    
+        // repeats until end of the array 
+        for (int j = 0; j < intArrLength; j++) { 
+    
+          // determines the sum of left side and sum of right side  
+          intSumLeft += nums[j]; 
+          intSumRight = intTotalSum - intSumLeft; 
+          
+          // if the sums are equivallent then it is true
+          if (intSumLeft == intSumRight) {
+            returnValue = true;
+          }
+          // if sums are not equal, return false
+          else{
+            returnValue = false;
+          }
+        }
+    
+        // output the boolean return value
+        return returnValue; 
+    
+      }
+        
 
 }
