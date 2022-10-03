@@ -26,11 +26,11 @@ public class Utility {
         // Check each of the index values for the user inputted string
         for (int intCount = 0; intCount < str.length(); intCount++){
             // If there is an 'x' character, temporarily make set it to be not balanced
-            if (str.charAt(intCount) == 'x'){
+            if (str.charAt(intCount) == 'x') {
                 isBalanced = false;
             }
             // If there is a 'y' character, the string will be balanced
-            else if (str.charAt(intCount) == 'y'){
+            else if (str.charAt(intCount) == 'y') {
                 isBalanced = true;
             }
         }
@@ -84,20 +84,20 @@ public class Utility {
         int intZeros = 0;
        
         // Check all the array numbers in nums to see if they are 10
-        for (int intIndex = 0; intIndex < nums.length; intIndex++){
-            if (nums[intIndex] == 10){
+        for (int intIndex = 0; intIndex < nums.length; intIndex++) {
+            if (nums[intIndex] == 10) {
                 intZeros++;
             }
            
             // Copy the index over if 10 is not stored in it
-            else if (nums[intIndex] != 10){
+            else if (nums[intIndex] != 10) {
                 intCopy[intIndex - intZeros] = nums[intIndex];
             }
         }
        
         // Add the same number of 0s at the end of the copy, as there are 10s in the original
-        if (intZeros != 0){
-            for (int intCount = 0; intCount < intZeros; intCount++){
+        if (intZeros != 0) {
+            for (int intCount = 0; intCount < intZeros; intCount++) {
                 intCopy[(nums.length - 1) - intCount] = 0;
             }
         }
@@ -119,11 +119,11 @@ public class Utility {
         int intSame = 0;
         int intNum = 0;
         // Nested for loop to compare each integer on the arrays
-        for (int intCount = 0; intCount < outer.length; intCount++){
+        for (int intCount = 0; intCount < outer.length; intCount++) {
            
             // Set intCount2 = intCount because the integers are in increasing order
-            for (int intCount2 = intNum; intCount2 < inner.length; intCount2++){
-                if (outer[intCount] == inner[intCount2]){
+            for (int intCount2 = intNum; intCount2 < inner.length; intCount2++) {
+                if (outer[intCount] == inner[intCount2]) {
                     // After finding a pair of matching integers, break the inner loop
                     // Inner loop continues at intCount2 + 1
                     intSame++;
@@ -133,7 +133,7 @@ public class Utility {
             }
         }
         // If all inner integers are found, return true
-        if (intSame == inner.length){
+        if (intSame == inner.length) {
             return true;
         }
         // Otherwise return false
