@@ -3,6 +3,7 @@ import java.io.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 
@@ -63,24 +64,33 @@ public class Utility {
      * Evaluates a list of words and determines which word will come first in alphabetical order
      * 
      * @param filenametxt, the file that contains the list of names being tested
-     * @returns the word that comes first alphabetically
+     * @returns strAlphaWord, the word that comes first alphabetically
      * @author K. Sinclair
      */
     
-    //public static String alphaWord (String filenametxt) throws IOException{
+    public static String alphaWord (String filenametxt) throws IOException{
         // read the file
-
-        // define variables
+        Scanner scanFile = new Scanner(new File(filenametxt));
         
+        // define variables
+        String strWord = "";
+        String strAlphaWord = "z";
 
         // go through all the words in the file 
-        
-            
-        //}
-        // close the file 
+        while (strWord != null) {
+            strWord = scanFile.nextLine();
 
-        // return the word that would be first in alphabetical order
+            // if the word comes before alphabetically, then replace it with that word
+            if (strWord!=null && strAlphaWord.compareToIgnoreCase(strWord) > 0){ 
+                strAlphaWord = strWord;
+            }
+        }
+        // close the scanner
+        scanFile.close();
 
+        // return the word that comes alphabetically first 
+        return strAlphaWord;
+    }
     
 
     /*
@@ -118,7 +128,14 @@ public class Utility {
         return newArray;
     }
 
-    // Arrays - 1D, 2 Loops
+    /*
+     * Arrays 3 - One Dimensional 
+     * Returns an array that contains the same numbers as in the given array, except it is rearranged so that all the zeros are at the front of the array
+     * 
+     * @param nums the array 
+     * @return returnValue, the new rearranged array with the zeros at the front and remaining integers following
+     * @author K. Sinclair
+     */
     public static boolean canBalance (int[] nums){ 
     
         // defining the variables
