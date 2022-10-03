@@ -1,29 +1,12 @@
 package gr11review.part2;
 import java.io.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Arrays;
+]import java.util.Arrays;
 import java.util.Scanner;
 
 
 
 public class Utility {
-
-    public static void main (String[] args){
-
-        // Method 3 
-        System.out.print(xyzMiddle("AAxyzB"));
-
-        // Array 3 - Checking the output
-        int myarray[] = {1, 0, 0, 1};
-        System.out.println(Arrays.toString(zeroFront(myarray)));
-
-        // Array 5 - Check output
-        
-
-
-    }
-
+    
     /*
      * Methods 3
      * Determines if the substring "xyz" appears in the exact middle of a larger string
@@ -129,11 +112,11 @@ public class Utility {
     }
 
     /*
-     * Arrays 3 - One Dimensional 
-     * Returns an array that contains the same numbers as in the given array, except it is rearranged so that all the zeros are at the front of the array
+     * Arrays 5 - One Dimensional - Two Loops
+     * Evaluates if the non-empty array can split the array so that the sum of the numbers can equal the other side. 
      * 
      * @param nums the array 
-     * @return returnValue, the new rearranged array with the zeros at the front and remaining integers following
+     * @return returnValue, a boolean value that states whether the array can be spit into two equal sums
      * @author K. Sinclair
      */
     public static boolean canBalance (int[] nums){ 
@@ -161,15 +144,11 @@ public class Utility {
           if (intSumLeft == intSumRight) {
             returnValue = true;
           }
-        
         }
         // if the sums aren't equal return value is false
         returnValue = false;
 
         // output the boolean return value
         return returnValue; 
-    
       }
-        
-
 }
