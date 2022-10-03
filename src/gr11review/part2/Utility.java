@@ -141,5 +141,33 @@ public class Utility {
             return false;
         }
     }
+     
+ 
+ 
+    /**
+     * Takes a 2D array and reverses all the content in the array
+     *
+     * @param arr A 2D array that needs to be reversed
+     * @return int[][] intReverse, the reversed 2D array
+     *
+     */
+    public static int[][] reverse(int[][] arr) {
+        // Create a new 2D array to store the changes
+        int[][] intReverse = new int[arr.length][arr[0].length];
+       
+        // Initialize the largest indexe numbers in a 2D array
+        int intY = arr[0].length - 1;
+        int intX = arr.length - 1;
+       
+        // Reverse the integers' order in the 2D array
+        for (int intRow = 0; intRow <= intX; intRow++) {
+            for (int intColumn = 0; intColumn <= intY; intColumn++) {
+                // Set the copy equal to the reversed 2D array
+                intReverse[intX - intRow][intY - intColumn] = arr[intRow][intColumn];
+            }
+        }
+        return intReverse;
+    }
+
     
 }

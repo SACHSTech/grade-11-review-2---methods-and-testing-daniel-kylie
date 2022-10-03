@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import gr11review.part2.Utility;
 
+import java.util.Arrays;;
+
 public class UtilityTest{
     
     // Methods 1
@@ -87,5 +89,27 @@ public class UtilityTest{
         assertEquals(true, Utility.linearIn(intOuter1, intInner1) );
     }
     
-  
+    // Array 7 - Two Dimensional
+    @Test
+    public void reverseTest1() {
+        int[][] intTwoDArray = new int[][]{{6, 5 ,4}, {3, 2, 1}};
+        int[][] intReverseArray = new int[][]{{1, 2, 3}, {4, 5, 6}};
+        assertTrue(Arrays.deepEquals(intTwoDArray, Utility.reverse(intReverseArray)));
+    }
+
+    // Checks that it works with 3 by 3 case
+    @Test
+    public void reverseTest2() {
+        int[][] intTwoDArray1 = new int[][]{{9, 8, 7}, {6, 5 ,4}, {3, 2, 1}};
+        int[][] intReverseArray1 = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        assertTrue(Arrays.deepEquals(intTwoDArray1, Utility.reverse(intReverseArray1)));
+    }
+
+    // Checks that it works with 2 by 4 case
+    @Test
+    public void reverseTest3() {
+        int[][] intTwoDArray2 = new int[][]{{7, 6, 5, 4}, {3, 2, 1, 0}};
+        int[][] intReverseArray2 = new int[][]{{0, 1, 2, 3}, {4, 5, 6, 7}};
+        assertTrue(Arrays.deepEquals(intTwoDArray2, Utility.reverse(intReverseArray2)));
+    }
 }
