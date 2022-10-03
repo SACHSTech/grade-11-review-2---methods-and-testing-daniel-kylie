@@ -69,7 +69,7 @@ public class Utility {
         return strLongestString;
     }
 
-    
+
 
     /**
      * Given an array of integers, remove all 10s and replace them with 0s at the end of the array
@@ -103,7 +103,43 @@ public class Utility {
         }
         return intCopy;
     }
- 
+    
 
+
+    /**
+     * Given two arrays of ints, return true if all of the numbers in inner array appear in the outer array
+     *
+     * @param outer An array of outer integers numbers
+     * @param inner An array of inner integer numbers
+     * @return true or false, do all the inner integers appear in the outer array
+     *
+     */
+    public static boolean linearIn(int[] outer, int[] inner) {
+        // Initialize variable for how many times matching integers are found
+        int intSame = 0;
+        int intNum = 0;
+        // Nested for loop to compare each integer on the arrays
+        for (int intCount = 0; intCount < outer.length; intCount++){
+           
+            // Set intCount2 = intCount because the integers are in increasing order
+            for (int intCount2 = intNum; intCount2 < inner.length; intCount2++){
+                if (outer[intCount] == inner[intCount2]){
+                    // After finding a pair of matching integers, break the inner loop
+                    // Inner loop continues at intCount2 + 1
+                    intSame++;
+                    intNum = intCount2 + 1;
+                    break;
+                }
+            }
+        }
+        // If all inner integers are found, return true
+        if (intSame == inner.length){
+            return true;
+        }
+        // Otherwise return false
+        else {
+            return false;
+        }
+    }
     
 }

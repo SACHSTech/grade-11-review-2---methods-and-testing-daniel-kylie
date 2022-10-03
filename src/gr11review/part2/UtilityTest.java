@@ -16,6 +16,7 @@ public class UtilityTest{
         assertEquals(true, Utility.xyBalance("xxxy"));
     } 
 
+    // Tests when numbers are involved
     @Test
     public void xyBalanceTest2(){
         assertEquals(false, Utility.xyBalance("xyxxewe23"));
@@ -36,6 +37,7 @@ public class UtilityTest{
         }
     }
     
+    // Tests when numbers are involved
     @Test
     public void longestWordTest2(){
         try{
@@ -60,11 +62,30 @@ public class UtilityTest{
         assertArrayEquals(intArrayExpected1, Utility.withoutTen(intArray1));
     }
 
+    // Tests when empty
     @Test
     public void withoutTenTest3(){
-        int[] intArray2 = {10, 10, 2, 2};
-        int[] intArrayExpected2 = {2, 2, 0, 0};
+        int[] intArray2 = {};
+        int[] intArrayExpected2 = {};
         assertArrayEquals(intArrayExpected2, Utility.withoutTen(intArray2));
     }
+
+    // Array 4 - One Dimensional - Two Loops
+    // False case
+    @Test
+    public void linearInTest1(){
+        int[] intOuter = {10, 10, 20, 30, 40};
+        int[] intInner = {10, 11};
+        assertEquals(false, Utility.linearIn(intOuter, intInner) );
+    }
+
+    // True case
+    @Test
+    public void linearInTest2(){
+        int[] intOuter1 = {1, 2, 4, 6};
+        int[] intInner1 = {2, 4};
+        assertEquals(true, Utility.linearIn(intOuter1, intInner1) );
+    }
+    
   
 }
