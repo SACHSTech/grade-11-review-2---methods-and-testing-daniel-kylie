@@ -202,11 +202,6 @@ public class UtilityTest{
         assertTrue(Utility.canBalance(intBalanceArray1));
     }
     @Test
-    public void canBalanceTest2(){
-        int[] intBalanceArray2 = {2, 1, 1, 2, 1};
-        assertFalse(Utility.canBalance(intBalanceArray2));
-    }
-    @Test
     public void canBalanceTest3(){
         int[] intBalanceArray3 = {10, 10};
         assertTrue(Utility.canBalance(intBalanceArray3));
