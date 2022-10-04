@@ -187,8 +187,18 @@ public class UtilityTest{
             assertEquals("adipiscing", Utility.alphaWord("words.txt"));
         }catch(IOException e){       
             System.out.println("File does not exist.");     
+        }  
+    }
+     /**
+     * Test 2 for alphaWord
+     * @author K.Sinclair
+     */
+    public void alphaWordTest2(){
+        try{
+            assertEquals("adventurous", Utility.alphaWord("words2.txt"));
+        }catch(IOException e){
+            System.out.println("File does not exist. ");
         }
-        
     }
 
     // test Arrays 3 - One Dimensional
