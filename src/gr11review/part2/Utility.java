@@ -257,10 +257,19 @@ public class Utility {
         int intArrLength = nums.length; 
         boolean returnValue = false;
     
+
+        // if array is empty return is automatically false
+        if (intNumsLength == 0) {
+            returnValue = false;
+        }
+    
         // finds the sum of the entire array of integers 
         for (int i = 0; i < intArrLength; i++) { 
             intTotalSum += nums[i]; 
         }
+        // if total sum is divisible by 2 then continue
+        if (intTotalSum % 2 == 0){
+            intSumLeft = intTotalSum / 2;
     
         // repeats until end of the array 
         for (int j = 0; j < intArrLength; j++) { 
@@ -276,7 +285,12 @@ public class Utility {
         }
         // if the sums aren't equal return value is false
         returnValue = false;
+        }
 
+        // when sums can be balanced, return true
+        if (intSumLeft == intSumRight){
+            returnValue = true;
+        }
         // output the boolean return value
         return returnValue; 
       }
