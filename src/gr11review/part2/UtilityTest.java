@@ -156,7 +156,7 @@ public class UtilityTest{
     }
     @Test
     public void xyzMiddleTest2(){
-        assertEquals(true, Utility.xyzMiddle("AxyzBB"));
+        assertEquals(false, Utility.xyzMiddle("AxyzBB"));
     }
     @Test
     public void xyzMiddleTest3(){

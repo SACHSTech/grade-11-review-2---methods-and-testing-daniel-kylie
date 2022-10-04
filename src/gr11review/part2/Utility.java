@@ -248,15 +248,15 @@ public class Utility {
      * @return returnValue, a boolean value that states whether the array can be spit into two equal sums
      * @author K. Sinclair
      */
-    public static boolean canBalance (int[] nums){ 
-    
-        // defining the variables
+    public static boolean canBalance(int[] nums){ 
+        // defining the variables used
         int intTotalSum = 0; 
         int intSumLeft = 0;
-        int intSumRight; 
-        int intArrLength = nums.length; 
+        int intSumRight = 0; 
+        int x = 0;
+        int intNumsLength = nums.length; 
         boolean returnValue = false;
-    
+
 
         // if array is empty return is automatically false
         if (intNumsLength == 0) {
@@ -264,27 +264,27 @@ public class Utility {
         }
     
         // finds the sum of the entire array of integers 
-        for (int i = 0; i < intArrLength; i++) { 
+        for (int i = 0; i < nums.length; i++) { 
             intTotalSum += nums[i]; 
         }
         // if total sum is divisible by 2 then continue
-        if (intTotalSum % 2 == 0){
+        if ((intTotalSum % 2) == 0){
             intSumLeft = intTotalSum / 2;
-    
-        // repeats until end of the array 
-        for (int j = 0; j < intArrLength; j++) { 
-    
-          // determines the sum of left side and sum of right side  
-          intSumLeft += nums[j]; 
-          intSumRight = intTotalSum - intSumLeft; 
-          
-          // if the sums are equivallent then it is true
-          if (intSumLeft == intSumRight) {
-            returnValue = true;
-          }
+
+            // continue to repeat through whole array to see if sum can be balanced
+            while(intSumRight != intSumLeft){
+                intSumRight += nums[x];
+                x++;
+
+                // once loop has gone through whole array break
+                if (x == intNumsLength){
+                    break;
+                }
+            }
         }
-        // if the sums aren't equal return value is false
-        returnValue = false;
+        // when total sum is not divisible by 2, then automaticlaly false
+        else {
+            returnValue = false;
         }
 
         // when sums can be balanced, return true
