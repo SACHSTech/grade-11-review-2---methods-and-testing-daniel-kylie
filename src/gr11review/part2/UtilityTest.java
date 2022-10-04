@@ -15,7 +15,7 @@ import java.util.Arrays;;
 public class UtilityTest{
     
 
-    // Methods 1
+    // Methods 1 (Daniel)
     @Test
     public void xyBalanceTest1(){ 
         assertEquals(true, Utility.xyBalance("xxxy"));
@@ -32,7 +32,7 @@ public class UtilityTest{
         assertEquals(true, Utility.xyBalance("xxxy2189das"));
     }
 
-    // IO reader 1
+    // IO reader 1 (Daniel)
     @Test
     public void longestWordTest1(){
         try{
@@ -52,7 +52,7 @@ public class UtilityTest{
         }
     } 
 
-    // Array 1 - One Dimensional 
+    // Array 1 - One Dimensional (Daniel)
     @Test 
     public void withoutTenTest1(){
         int[] intArray = {1, 10, 10, 2};
@@ -75,7 +75,7 @@ public class UtilityTest{
         assertArrayEquals(intArrayExpected2, Utility.withoutTen(intArray2));
     }
 
-    // Array 4 - One Dimensional - Two Loops
+    // Array 4 - One Dimensional - Two Loops (Daniel)
     // False case
     @Test
     public void linearInTest1(){
@@ -92,7 +92,7 @@ public class UtilityTest{
         assertEquals(true, Utility.linearIn(intOuter1, intInner1) );
     }
     
-    // Array 7 - Two Dimensional
+    // Array 7 - Two Dimensional (Daniel)
     @Test
     public void reverseTest1() {
         int[][] intTwoDArray = new int[][]{{6, 5 ,4}, {3, 2, 1}};
