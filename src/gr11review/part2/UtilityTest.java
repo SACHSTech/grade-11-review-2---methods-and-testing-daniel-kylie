@@ -1,44 +1,12 @@
 package gr11review.part2;
 import java.io.IOException;
-
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.io.IOException;
-
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-
-import gr11review.part2.Utility;
-
 import java.util.Arrays;;
 
 public class UtilityTest{
-
-    // test Method - 3
-    @Test
-    public void xyzMiddleTest1(){
-        assertEquals(true, Utility.xyzMiddle("AAxyzBB"));
-    }
-    @Test
-    public void xyzMiddleTest2(){
-        assertEquals(true, Utility.xyzMiddle("AxyzBB"));
-    }
-    @Test
-    public void xyzMiddleTest3(){
-        assertEquals(false, Utility.xyzMiddle("AxyzBBB"));
-    }
-    
-
-    // test File IO - Read 2
-    @Test
-    public void alphaWordTest1() {
-        try{
-            assertEquals("adipiscing", Utility.alphaWord("words.txt"));
-
-
     /**
      * Methods 1 - Test that there is a y behind all x's
      * @author D.Gu
@@ -78,54 +46,11 @@ public class UtilityTest{
             System.out.println("File does not exist.");     
         }
     }
-    
-
-    // test Arrays 3 - One Dimensional
-    @Test
-    public void zeroFrontTest1(){
-        int[] intZeroArray1 = {1, 0, 0, 1};
-        int[] intReturnArray1 = {0, 0, 1, 1};
-        assertArrayEquals(intReturnArray1, Utility.zeroFront(intZeroArray1));
-    }
-    @Test
-    public void zeroFrontTest2(){
-        int[] intZeroArray2 = {0, 1, 1, 0, 1};
-        int[] intReturnArray2 = {0, 0, 1, 1, 1};
-        assertArrayEquals(intReturnArray2, Utility.zeroFront(intZeroArray2));
-    }
-    @Test
-    public void zeroFrontTest3(){
-        int[] intZeroArray3 = {1, 0};
-        int[] intReturnArray3 = {0, 1};
-        assertArrayEquals(intReturnArray3, Utility.zeroFront(intZeroArray3));
-    }
-
-    // test Array 5 - 1D - 2 loop
-    @Test
-    public void canBalanceTest1(){
-        int[] intBalanceArray1 = {1, 1, 1, 2, 1};
-        assertTrue(Utility.canBalance(intBalanceArray1));
-    }
-    @Test
-    public void canBalanceTest2(){
-        int[] intBalanceArray2 = {2, 1, 1, 2, 1};
-        assertFalse(Utility.canBalance(intBalanceArray2));
-    }
-    @Test
-    public void canBalanceTest3(){
-        int[] intBalanceArray3 = {10, 10};
-        assertTrue(Utility.canBalance(intBalanceArray3));
-    }
-
-    // test - Arrays 2D
-
-    // Tests when numbers are involved
 
     /**
      * Test when numbers are involved
      * @author D.Gu
      */
-
     @Test
     public void longestWordTest2(){
         try{
@@ -223,4 +148,119 @@ public class UtilityTest{
         assertTrue(Arrays.deepEquals(intTwoDArray2, Utility.reverse(intReverseArray2)));
     }
     
+    //KYLIE TESTS
+    // test Method - 3
+    @Test
+    public void xyzMiddleTest1(){
+        assertEquals(true, Utility.xyzMiddle("AAxyzBB"));
+    }
+    @Test
+    public void xyzMiddleTest2(){
+        assertEquals(false, Utility.xyzMiddle("AxyzBB"));
+    }
+    @Test
+    public void xyzMiddleTest3(){
+        assertEquals(false, Utility.xyzMiddle("AxyzBBB"));
+    }
+    
+
+    // test File IO - Read 2
+    @Test
+    public void alphaWordTest1() {
+        try{
+            assertEquals("adipiscing", Utility.alphaWord("words.txt"));
+        }catch(IOException e){       
+            System.out.println("File does not exist.");     
+        }
+        
+    }
+
+    // test Arrays 3 - One Dimensional
+    @Test
+    public void zeroFrontTest1(){
+        int[] intZeroArray1 = {1, 0, 0, 1};
+        int[] intReturnArray1 = {0, 0, 1, 1};
+        assertArrayEquals(intReturnArray1, Utility.zeroFront(intZeroArray1));
+    }
+    @Test
+    public void zeroFrontTest2(){
+        int[] intZeroArray2 = {0, 1, 1, 0, 1};
+        int[] intReturnArray2 = {0, 0, 1, 1, 1};
+        assertArrayEquals(intReturnArray2, Utility.zeroFront(intZeroArray2));
+    }
+    @Test
+    public void zeroFrontTest3(){
+        int[] intZeroArray3 = {1, 0};
+        int[] intReturnArray3 = {0, 1};
+        assertArrayEquals(intReturnArray3, Utility.zeroFront(intZeroArray3));
+    }
+
+    // test Array 5 - 1D - 2 loop
+    @Test
+    public void canBalanceTest1(){
+        int[] intBalanceArray1 = {1, 1, 1, 2, 1};
+        assertTrue(Utility.canBalance(intBalanceArray1));
+    }
+    @Test
+    public void canBalanceTest3(){
+        int[] intBalanceArray3 = {10, 10};
+        assertTrue(Utility.canBalance(intBalanceArray3));
+    }
+
+    // test array 8 - 2D 
+
+    // defining the tested input and return answers
+    int[][] splitInput1 = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    int[][] splitReturn1 = {
+        {1,2},
+        {4,5}
+    };
+    int[][] splitReturn2 = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    int[][] splitInput2 = {
+        {3,1,4,1,5},
+        {9,2,6,5,3},
+        {6,5,3,5,8},
+        {9,7,9,3,2},
+        {3,8,4,6,2}
+    };
+    int[][] splitReturn3 = {
+        {3,1,4},
+        {9,2,6},
+        {6,5,3}
+    };
+    int[][] splitReturn4 = {
+        {3,1,4},
+        {9,2,6},
+        {6,5,3},
+        {9,7,9}
+    };
+
+    @Test
+    void splitTest1(){
+        assertArrayEquals(splitReturn1, Utility.split(splitInput1, 1, 1));
+    }
+    
+    @Test
+    void splitTest2(){
+        assertArrayEquals(splitReturn2, Utility.split(splitInput1, 2, 2));
+    }
+
+    @Test
+    void splitTest3(){
+        assertArrayEquals(splitReturn3, Utility.split(splitInput2, 2, 2));
+    }
+
+    @Test
+    void splitTest4(){
+        assertArrayEquals(splitReturn4, Utility.split(splitInput2, 3, 2));
+    }
+
 }
