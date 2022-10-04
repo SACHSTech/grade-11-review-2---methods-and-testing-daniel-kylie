@@ -1,6 +1,6 @@
 package gr11review.part2;
 import java.io.*;
-]import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -151,4 +151,30 @@ public class Utility {
         // output the boolean return value
         return returnValue; 
       }
+
+
+     /*
+     * Arrays 8 - Two Dimensional 
+     * This method outputs a portion of a 2D array based on the specific row and col 
+     * 
+     * @param row goes through the row of the given array
+     * @param col goes through the column of the given array
+     * @return intReturnArray, returns a portion of the 2D array based on the specific row and column
+     * @author K. Sinclair
+     */
+      // Array 8 - Two Dimensional
+      public static int[][] split(int[][] arr, int row, int col){        
+        // make a variable for the return array 
+        int[][] intReturnArray = new int[row + 1][col + 1];
+
+        // creating the return array through nested for loop to go through colums then rows
+        for(int i = 0; i <= col; i++) {
+            for(int j = 0; j <= row; j++) {
+                // correct formating for the return array
+                intReturnArray[j][i] = arr[j][i];
+            }
+        }
+
+        // Output the return array
+        return intReturnArray;
 }
