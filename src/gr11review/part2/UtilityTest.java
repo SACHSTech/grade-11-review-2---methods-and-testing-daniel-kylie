@@ -212,6 +212,60 @@ public class UtilityTest{
         assertTrue(Utility.canBalance(intBalanceArray3));
     }
 
-    // test array 2
+    // test array 8 - 2D 
+
+    // defining the tested input and return answers
+    int[][] splitInput1 = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    int[][] splitReturn1 = {
+        {1,2},
+        {4,5}
+    };
+    int[][] splitReturn2 = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    int[][] splitInput2 = {
+        {3,1,4,1,5},
+        {9,2,6,5,3},
+        {6,5,3,5,8},
+        {9,7,9,3,2},
+        {3,8,4,6,2}
+    };
+    int[][] splitReturn3 = {
+        {3,1,4},
+        {9,2,6},
+        {6,5,3}
+    };
+    int[][] splitReturn4 = {
+        {3,1,4},
+        {9,2,6},
+        {6,5,3},
+        {9,7,9}
+    };
+
+    @Test
+    void splitTest1(){
+        assertArrayEquals(splitReturn1, Utility.split(splitInput1, 1, 1));
+    }
+    
+    @Test
+    void splitTest2(){
+        assertArrayEquals(splitReturn2, Utility.split(splitInput1, 2, 2));
+    }
+
+    @Test
+    void splitTest3(){
+        assertArrayEquals(splitReturn3, Utility.split(splitInput2, 2, 2));
+    }
+
+    @Test
+    void splitTest4(){
+        assertArrayEquals(splitReturn4, Utility.split(splitInput2, 3, 2));
+    }
 
 }
