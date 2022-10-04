@@ -12,86 +12,18 @@ import java.io.*;
 /**
  * Grade 11 review part 2 
  * @author D.Gu
+ * @author K.Sinclair
  * 
  */
 
 public class Utility {
     
-    /*
-     * Methods 3
-     * Determines if the substring "xyz" appears in the exact middle of a larger string
-     * 
-     * @param str, the string that is being tested in the method
-     * @returns a boolean of true or false 
-     * @author K. Sinclair
-     */
-
-    public static boolean xyzMiddle(String str){
-        // define the return boolean
-        boolean isXYZMiddle;
-    
-        // when the string contains 'xyz' and length of string is odd
-        if (str.contains("xyz") && (str.length() % 2 != 0)){
-
-            // create character placement expectations for 'xyz' in the middle
-            int intYPlacement = (str.length() - 1) / 2;
-            int intXPlacement = intYPlacement - 1;
-            int intZPlacement = intYPlacement + 1;
-
-            // check if the character placements are in the middle
-            if ((str.charAt(intYPlacement) == 'y') && (str.charAt(intXPlacement) == 'x') && (str.charAt(intZPlacement) == 'z')){
-                isXYZMiddle = true;
-            }
-            else{
-                isXYZMiddle = false;
-            }
-        }
-        else{
-            isXYZMiddle = false;
-        }
-        return isXYZMiddle;
-    }
-
-     /*
-     * File IO - Read 2
-     * Evaluates a list of words and determines which word will come first in alphabetical order
-     * 
-     * @param filenametxt, the file that contains the list of names being tested
-     * @returns strAlphaWord, the word that comes first alphabetically
-     * @author K. Sinclair
-     */
-    
-    public static String alphaWord (String filenametxt) throws IOException{
-        // read the file
-        Scanner scanFile = new Scanner(new File(filenametxt));
-        
-        // define variables
-        String strWord = "";
-        String strAlphaWord = "z";
-
-        // go through all the words in the file 
-        while (strWord != null) {
-            strWord = scanFile.nextLine();
-
-            // if the word comes before alphabetically, then replace it with that word
-            if (strWord!=null && strAlphaWord.compareToIgnoreCase(strWord) > 0){ 
-                strAlphaWord = strWord;
-            }
-        }
-        // close the scanner
-        scanFile.close();
-
-        // return the word that comes alphabetically first 
-        return strAlphaWord;
-    }
-    
-
     /**
      * Determines if the string is xy-balanced, meaning there is a 'y' character behind all the 'x' characters
      * 
      * @param str The user inputted string
      * @return isBalanced, whether the string is xy-balanced
-     * 
+     * @author D. Gu
      */
     public static boolean xyBalance(String str) {
         // Initialize the return value to be false (if there is no 'y' char it will remain false)
@@ -118,7 +50,7 @@ public class Utility {
      * 
      * @param filenametxt The name of the file
      * @return strLongestWord, the word with the most characters in the text file
-     * 
+     * @author D. Gu
      */
     public static String longestWord(String filenametxt) throws IOException {
         // Initialize characters in the longest word to be 0
@@ -149,7 +81,7 @@ public class Utility {
      *
      * @param nums An array of integers numbers
      * @return int[] intCopy, the inputted array after it has been changed
-     *
+     * @author D. Gu
      */
     public static int[] withoutTen(int[] nums) {
         // Make a copy of the array and initialize number of zeros
@@ -185,7 +117,7 @@ public class Utility {
      * @param outer An array of outer integers numbers
      * @param inner An array of inner integer numbers
      * @return true or false, do all the inner integers appear in the outer array
-     *
+     * @author D. Gu
      */
     public static boolean linearIn(int[] outer, int[] inner) {
         // Initialize variable for how many times matching integers are found
@@ -222,7 +154,7 @@ public class Utility {
      *
      * @param arr A 2D array that needs to be reversed
      * @return int[][] intReverse, the reversed 2D array
-     *
+     * @author D. Gu
      */
     public static int[][] reverse(int[][] arr) {
         // Create a new 2D array to store the changes
@@ -317,4 +249,73 @@ public class Utility {
         // output the boolean return value
         return returnValue; 
       }
+     /*
+     * Methods 3
+     * Determines if the substring "xyz" appears in the exact middle of a larger string
+     * 
+     * @param str, the string that is being tested in the method
+     * @returns a boolean of true or false 
+     * @author K. Sinclair
+     */
+
+    public static boolean xyzMiddle(String str){
+        // define the return boolean
+        boolean isXYZMiddle;
+    
+        // when the string contains 'xyz' and length of string is odd
+        if (str.contains("xyz") && (str.length() % 2 != 0)){
+
+            // create character placement expectations for 'xyz' in the middle
+            int intYPlacement = (str.length() - 1) / 2;
+            int intXPlacement = intYPlacement - 1;
+            int intZPlacement = intYPlacement + 1;
+
+            // check if the character placements are in the middle
+            if ((str.charAt(intYPlacement) == 'y') && (str.charAt(intXPlacement) == 'x') && (str.charAt(intZPlacement) == 'z')){
+                isXYZMiddle = true;
+            }
+            else{
+                isXYZMiddle = false;
+            }
+        }
+        else{
+            isXYZMiddle = false;
+        }
+        return isXYZMiddle;
+    }
+
+     /*
+     * File IO - Read 2
+     * Evaluates a list of words and determines which word will come first in alphabetical order
+     * 
+     * @param filenametxt, the file that contains the list of names being tested
+     * @returns strAlphaWord, the word that comes first alphabetically
+     * @author K. Sinclair
+     */
+    
+    public static String alphaWord (String filenametxt) throws IOException{
+        // read the file
+        Scanner scanFile = new Scanner(new File(filenametxt));
+        
+        // define variables
+        String strWord = "";
+        String strAlphaWord = "z";
+
+        // go through all the words in the file 
+        while (strWord != null) {
+            strWord = scanFile.nextLine();
+
+            // if the word comes before alphabetically, then replace it with that word
+            if (strWord!=null && strAlphaWord.compareToIgnoreCase(strWord) > 0){ 
+                strAlphaWord = strWord;
+            }
+        }
+        // close the scanner
+        scanFile.close();
+
+        // return the word that comes alphabetically first 
+        return strAlphaWord;
+    }
+    
+
 }
