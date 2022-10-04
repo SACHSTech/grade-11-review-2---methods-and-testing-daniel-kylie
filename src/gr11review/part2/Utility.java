@@ -1,13 +1,8 @@
 package gr11review.part2;
 import java.io.*;
-import java.util.Arrays;
 import java.util.Scanner;
-
-
-
 import java.io.File;
-import java.util.Scanner;
-import java.io.*;
+
 
 /**
  * Grade 11 review part 2 
@@ -291,6 +286,7 @@ public class Utility {
      *
      * @param A 2D array that needs to be reversed
      * @return int[][] intReverse, the reversed 2D array
+     * @author D. Gu
      *
      */
     public static int[][] reverse(int[][] arr) {
