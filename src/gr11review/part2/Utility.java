@@ -152,7 +152,7 @@ public class Utility {
     /**
      * Takes a 2D array and reverses all the content in the array
      *
-     * @param arr A 2D array that needs to be reversed
+     * @param A 2D array that needs to be reversed
      * @return int[][] intReverse, the reversed 2D array
      * @author D. Gu
      */
@@ -249,6 +249,33 @@ public class Utility {
         // output the boolean return value
         return returnValue; 
       }
+
+     /*
+     * Arrays 8 - Two Dimensional 
+     * This method outputs a portion of a 2D array based on the specific row and col 
+     * 
+     * @param row goes through the row of the given array
+     * @param col goes through the column of the given array
+     * @return intReturnArray, returns a portion of the 2D array based on the specific row and column
+     * @author K. Sinclair
+     */
+      
+      public static int[][] split(int[][] arr, int row, int col){        
+        // make a variable for the return array 
+        int[][] intReturnArray = new int[row + 1][col + 1];
+
+        // creating the return array through nested for loop to go through colums then rows
+        for(int i = 0; i <= col; i++) {
+            for(int j = 0; j <= row; j++) {
+                // correct formating for the return array
+                intReturnArray[j][i] = arr[j][i];
+            }
+        }
+
+        // Output the return array
+        return intReturnArray;
+      }
+
      /*
      * Methods 3
      * Determines if the substring "xyz" appears in the exact middle of a larger string
